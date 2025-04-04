@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './LoginWindow.module.css'
 import LoginInput from '../LoginInput/LoginInput'
 import LoginSwitcher from '../LoginSwitcher/LoginSwitcher'
+import LoginButton from '../LoginButton/LoginButton'
+import { motion } from 'motion/react'
+import LoginInputList from '../LoginInputList/LoginInputList'
 
 const LoginWindow = () => {
+  const [currWindow, setCurrWindow] = useState<"login" | "register">("login")
   return (
-    <div className={classes.loginWindow}>
-      <LoginSwitcher></LoginSwitcher>
-      <div className={classes.loginInputContainer}>
-        <LoginInput name='email'></LoginInput>
-        <LoginInput name='password'></LoginInput>
-        <button className={classes.restorePassword}>forgot your password?</button>
-      </div>
-      <button className={classes.loginButton}>Log In</button>
-    </div>
+    <motion.div layout className={classes.loginWindow}>
+      <LoginSwitcher currWindow={currWindow} setVal={setCurrWindow}></LoginSwitcher>
+      <LoginInputList currWindow={currWindow}></LoginInputList>
+      <LoginButton></LoginButton>
+    </motion.div>
   )
 }
 
