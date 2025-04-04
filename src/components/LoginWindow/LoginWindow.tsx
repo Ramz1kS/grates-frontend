@@ -12,7 +12,7 @@ const LoginWindow = () => {
     <motion.div layout className={classes.loginWindow}>
       <LoginSwitcher currWindow={currWindow} setVal={setCurrWindow}></LoginSwitcher>
       <LoginInputList currWindow={currWindow}></LoginInputList>
-      <LoginButton></LoginButton>
+      <LoginButton text={currWindow == 'login' ? "Log In" : "Register"}></LoginButton>
     </motion.div>
   )
 }

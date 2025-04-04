@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { motion } from 'motion/react'
 import classes from './LoginButton.module.css'
 
-const LoginButton = () => {
+interface LoginButtonProps {
+  text: string
+}
+
+const LoginButton: FC<LoginButtonProps> = ({text}) => {
   return (
     <motion.button 
     whileHover={{scale: 1.075}}
     whileTap={{scale: 0.95}}
-    className={classes.loginButton}>Log In</motion.button>
+    className={classes.loginButton}>{text}</motion.button>
   )
 }
 
