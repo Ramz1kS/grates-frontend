@@ -1,0 +1,13 @@
+.windowSwitcher {
+  display: flex;
+  padding-top: 15px;
+  padding: 0 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.windowSwitcher p {
+  color: #29234B;
+}

@@ -1,0 +1,44 @@
+.loginWindow {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  min-width: 361px;
+  /* min-height: 419px; */
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  border-radius: 20px;
+}
+
+.loginInputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.restorePassword {
+  background-color: none;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #29234B
+}
+
+.restorePassword:focus {
+  outline: none;
+}
+
+.loginButton {
+  border-radius: 20px;
+  background-color: #27005D;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+}

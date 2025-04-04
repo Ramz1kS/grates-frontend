@@ -1,0 +1,13 @@
+.welcome {
+  background: linear-gradient(220deg, #E4F1FF 0%, #4440FF 50%, #C67DFF 100%);
+  width: 100%;
+  height: 100vh;
+}
+
+.websiteName {
+  position: absolute;
+  left: 30px;
+  font-size: 20px;
+  top: 30px;
+  color: #EFF7FF;
+}
