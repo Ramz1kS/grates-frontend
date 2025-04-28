@@ -7,12 +7,20 @@ import { motion } from 'motion/react'
 import LoginInputList from '../LoginInputList/LoginInputList'
 
 const LoginWindow = () => {
-  const [currWindow, setCurrWindow] = useState<"login" | "register">("login")
+  const [currWindow, setCurrWindow] = useState<"login" | "register">("register")
+  const [errText, setErrText] = useState<string>("")
+  const handleEnter = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log("Hi!")
+  }
   return (
     <motion.div layout className={classes.loginWindow}>
       <LoginSwitcher currWindow={currWindow} setVal={setCurrWindow}></LoginSwitcher>
-      <LoginInputList currWindow={currWindow}></LoginInputList>
-      <LoginButton text={currWindow == 'login' ? "Log In" : "Register"}></LoginButton>
+      <h3 className={classes.errorMessage}>{errText}</h3>
+      <form className={classes.form} onSubmit={handleEnter}>
+        <LoginInputList currWindow={currWindow}></LoginInputList>
+        <LoginButton text={currWindow == 'login' ? "Log In" : "Register"}></LoginButton>
+      </form>
     </motion.div>
   )
 }

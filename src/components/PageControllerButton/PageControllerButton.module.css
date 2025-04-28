@@ -1,0 +1,32 @@
+.pageButton {
+  background: none;
+  border: none;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 4px;
+  border-radius: 25px;
+  outline: none;
+}
+
+.pageButton:focus {
+  outline: none;
+  border: none;
+}
+
+.pressedBackground {
+  position: absolute;
+  left: -5px;
+  z-index: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff40dfa8 0%, #4340ff67 50%, #ff40df00 85%);
+}
+
+.pageName {
+  z-index: 2;
+  font-size: 16px;
+  font-weight: bold;
+}

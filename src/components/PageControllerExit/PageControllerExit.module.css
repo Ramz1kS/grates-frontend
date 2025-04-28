@@ -1,0 +1,22 @@
+.pageButton {
+  background: none;
+  border: none;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 4px;
+  border-radius: 25px;
+  outline: none;
+}
+
+.pageButton:focus {
+  outline: none;
+  border: none;
+}
+
+.exitName {
+  z-index: 2;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5E5E5E;
+}
