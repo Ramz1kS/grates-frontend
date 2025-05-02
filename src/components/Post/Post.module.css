@@ -1,0 +1,71 @@
+
+.post {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 32px;
+  background-color: white;
+  box-shadow: 0px 2px 2px #9900ff6b;
+}
+
+.avatarAndUploadInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.commentAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.uploaderNickname {
+  font-weight: 800;
+  color: #29234B;
+  font-size: 16px;
+}
+
+.uploadTime {
+  color: #71839A;
+  font-size: 12px;
+}
+
+.postText { 
+  color: #29234B;
+  font-size: 14px;
+}
+
+.postsStats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postsStatsMain {
+  margin-top: 8px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.postButton {
+  height: 28px;
+  padding: 5px 10px;
+  border-radius: 27px;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: row;
+  border: none;
+}
+
+.count {
+  color: #2D2753;
+  font-size: 13px;
+}

@@ -7,5 +7,6 @@
   width: 180px;
   display: flex;
   flex-direction: column;
+  height: auto;
   gap: 2px; 
 }

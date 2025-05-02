@@ -12,8 +12,8 @@ const PageHeaderEllipses = () => {
   })
   return (
     <div className={classes.ellipseContainer}>
-      {ellipsesNums.map((val) => 
-      <div style={{
+      {ellipsesNums.map((val, index) => 
+      <div key={index} style={{
         position: "absolute",
         backgroundColor: colors[val % 2],
         top: -20 * (Math.random() * (1 - 0.8) + 0.8),

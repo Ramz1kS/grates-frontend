@@ -1,0 +1,26 @@
+.notFoundContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F4F4;
+}
+
+.mainContent {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.oops {
+  font-size: 24px;
+  font-weight: 600;
+}

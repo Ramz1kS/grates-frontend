@@ -1,0 +1,24 @@
+.avatarCollision {
+  position: relative;
+  width: 228px; 
+  flex-shrink: 0;
+}
+
+.avatarBorder {
+  position: absolute;
+  border-radius: 50%;
+  bottom: 0px;
+  width: 228px;
+  height: 228px;
+  flex-shrink: 0;
+  background: linear-gradient(#FF8EEE 0%, #555E99 63%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarImage {
+  border-radius: 50%;
+  width: 98%;
+  height: 98%;
+}

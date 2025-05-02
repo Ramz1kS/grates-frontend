@@ -1,0 +1,39 @@
+.buttonSectionSwitcher {
+  position: relative;
+  display: flex;
+  padding: 15px 30px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  background: none;
+  background-color: none;
+  border: none;
+  gap: 6px;
+}
+
+.buttonBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(#4440FF 0%, #CF23FF 93%)
+}
+
+.buttonSectionSwitcher:focus {
+  outline: none;
+  border: none;
+}
+
+.sectionName {
+  position: relative;
+  font-size: 20px;
+  display: inline;
+}
+
+.sectionCount {
+  font-size: 16px;
+  position: relative;
+}

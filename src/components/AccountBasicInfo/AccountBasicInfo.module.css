@@ -1,0 +1,21 @@
+
+.nickname {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.realName {
+  color: #686363;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.details {
+  color: #929292;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info {
+  flex-grow: 0;
+}
