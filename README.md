@@ -6,7 +6,7 @@ A frontend for a social media platform Grates that you reasonably know nothing a
 commit 1:
 - two pages, /welcome and /active
 - basically some stuff for main interface, nothing is done but there are some nice animations
-- 
+
 initial commit:
 - non-functional login form
 - i just wanted to post it lol

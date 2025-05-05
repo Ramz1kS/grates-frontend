@@ -4,6 +4,7 @@ import PageHeaderEllipses from '../../components/PageHeaderEllipses/PageHeaderEl
 import { PageHeader } from '../../components/PageHeader/PageHeader'
 import { PageController } from '../../components/PageController/PageController'
 import { AccountPage } from '../../components/AccountPage/AccountPage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 const PageManager = () => {
   return (
@@ -12,7 +13,9 @@ const PageManager = () => {
       <div className={classes.mainContainer}>
         <PageController></PageController>
         <div className={classes.pageContent}>
-          <AccountPage></AccountPage>
+        <Routes>
+          <Route path='account/*' element={<AccountPage></AccountPage>}></Route>
+        </Routes>
         </div>
       </div>
     </div>

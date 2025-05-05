@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to={"/welcome"}></Navigate>}></Route>
         <Route path='/welcome' element={<WelcomePage></WelcomePage>}></Route>
-        <Route path='/active' element={<PageManager></PageManager>}></Route>
+        <Route path='/active/*' element={<PageManager></PageManager>}></Route>
         <Route path='/notfound' element={<NotFoundPage></NotFoundPage>}></Route>
         <Route path='*' element={<Navigate to={"/notfound"}></Navigate>}></Route>
       </Routes>

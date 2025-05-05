@@ -8,29 +8,23 @@ import { AccountBasicInfo } from '../AccountBasicInfo/AccountBasicInfo'
 import { PostsList } from '../PostsList/PostsList'
 import { PhotosList } from '../PhotosList/PhotosList'
 import { FriendsList } from '../FriendsList/FriendsList'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 export const AccountPage = () => {
   const pages = [{
     name: "Posts",
+    urlname: "posts",
     count: 42
   }, {
     name: "Friends",
+    urlname: "friends",
     count: 12
   }, {
     name: "Photos",
+    urlname: "photos",
     count: 4
   }]
   const [currSection, setCurrSection] = useState<string>(pages[0].name)
-  const manageSection = () => {
-    switch (currSection) {
-      case "Posts":
-        return <PostsList nickname={'idspikes1'}></PostsList>
-      case "Photos":
-        return <PhotosList></PhotosList>
-      case "Friends":
-        return <FriendsList></FriendsList>
-    }
-  }
   return (
     <div className={classes.accountMainContainer}>
       <div className={classes.accountHeader}>
@@ -43,7 +37,11 @@ export const AccountPage = () => {
           </section>
         </section>
         <AccountSectionSwitcher currPage={currSection} pages={pages} setCurrPage={setCurrSection}></AccountSectionSwitcher>
-        { manageSection() }
+        <Routes>
+          <Route path='posts' element={<PostsList nickname={'idspikes1'}></PostsList>}></Route>
+          <Route path='photos' element={<PhotosList></PhotosList>}></Route>
+          <Route path='friends' element={<FriendsList></FriendsList>}></Route>
+        </Routes>
       </div>
     </div>
   )

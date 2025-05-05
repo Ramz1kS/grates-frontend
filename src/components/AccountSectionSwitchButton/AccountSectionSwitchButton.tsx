@@ -1,18 +1,22 @@
 import React, { FC } from 'react'
 import { motion } from 'motion/react'
 import classes from './AccountSectionSwitchButton.module.css'
+import { useNavigate } from 'react-router-dom'
 
 interface AccountSectionSwitchButtonProps {
   name: string,
   count?: number,
+  url: string,
   isCurr: boolean,
   setCurr: (val: string | ((prevVal: string) => string)) => void
 }
 
-export const AccountSectionSwitchButton: FC<AccountSectionSwitchButtonProps> = ({name, count, isCurr, setCurr}) => {
+export const AccountSectionSwitchButton: FC<AccountSectionSwitchButtonProps> = ({name, count, isCurr, setCurr, url}) => {
+  const navigate = useNavigate()
   const handleClick = () => {
     setCurr(name)
     console.log("Curr page should be ", name, "now")
+    navigate(`/active/account/${url}`)
   }
   return (
     <motion.button
