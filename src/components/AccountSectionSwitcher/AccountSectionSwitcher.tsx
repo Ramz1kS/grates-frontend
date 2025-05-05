@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import classes from './AccountSectionSwitcher.module.css'
 import { AccountSectionSwitchButton } from '../AccountSectionSwitchButton/AccountSectionSwitchButton'
 
-export const AccountSectionSwitcher = () => {
-  const pages = [{
-    name: "Posts",
-    count: 42
-  }, {
-    name: "Friends",
-    count: 12
-  }, {
-    name: "Photos",
-    count: 4
-  }]
-  const [currPage, setCurrPage] = useState<string>(pages[0].name)
+interface AccountSectionSwitcherProps {
+  currPage: string,
+  setCurrPage: (val: string | ((val: string) => string)) => void,
+  pages: {
+    name: string,
+    count: number
+  }[]
+}
+
+export const AccountSectionSwitcher: FC<AccountSectionSwitcherProps> = ({
+  currPage, setCurrPage, pages
+}) => {
   return (
     <section className={classes.buttonsContainer}>
       { pages.map((val, index) => 
