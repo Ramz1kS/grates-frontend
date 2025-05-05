@@ -1,0 +1,7 @@
+.messagesMainContainer {
+  width: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

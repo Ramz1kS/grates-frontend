@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import classes from './AccountPage.module.css'
-import { AccountAvatar } from '../AccountAvatar/AccountAvatar'
+import { AccountAvatar } from '../../components/AccountAvatar/AccountAvatar'
 import BackgroundTest from '../../assets/test/account_page_background_test.png'
-import { AccountSectionSwitcher } from '../AccountSectionSwitcher/AccountSectionSwitcher'
-import { AccountBasicInfo } from '../AccountBasicInfo/AccountBasicInfo'
-import { PostsList } from '../PostsList/PostsList'
-import { PhotosList } from '../PhotosList/PhotosList'
-import { FriendsList } from '../FriendsList/FriendsList'
+import { AccountSectionSwitcher } from '../../components/AccountSectionSwitcher/AccountSectionSwitcher'
+import { AccountBasicInfo } from '../../components/AccountBasicInfo/AccountBasicInfo'
+import { PostsList } from '../../components/PostsList/PostsList'
+import { PhotosList } from '../../components/PhotosList/PhotosList'
+import { FriendsList } from '../../components/FriendsList/FriendsList'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 export const AccountPage = () => {
@@ -24,7 +24,15 @@ export const AccountPage = () => {
     urlname: "photos",
     count: 4
   }]
-  const [currSection, setCurrSection] = useState<string>(pages[0].name)
+  const [currSection, setCurrSection] = useState<string>(() => {
+    const curr_path: string = window.location.pathname
+    for (let i = 0; i < pages.length; i++) {
+      if (curr_path.includes(`/${pages[i].urlname}`)) {
+        return pages[i].name;
+      }
+    }
+    return ""
+  })
   return (
     <div className={classes.accountMainContainer}>
       <div className={classes.accountHeader}>
