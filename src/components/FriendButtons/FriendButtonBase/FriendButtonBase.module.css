@@ -1,0 +1,16 @@
+.friendButton {
+  opacity: 0.5;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: none;
+}
+
+.friendButton:focus {
+  outline: none;
+}
+
+.friendButtonImage {
+  width: 35px;
+  height: auto;
+}

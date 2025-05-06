@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { PageControllerButtonInfo } from '../../types'
 import classes from './PageController.module.css'
 import { PageControllerButton } from '../PageControllerButton/PageControllerButton'
 import { PageControllerExit } from '../PageControllerExit/PageControllerExit'
 
-export const PageController = () => {
-  const pageNames = ["Feed", "Messages", "Account", "Friends", "Notifications"]
+interface PageControllerProps {
+  setTabName: (val: string | ((val: string) => string)) => void
+}
+
+export const PageController: FC<PageControllerProps> = ({setTabName}) => {
   const pages: PageControllerButtonInfo[] = [{
     name: "Feed",
     urlname: "feed"
@@ -17,11 +20,15 @@ export const PageController = () => {
     urlname: "account/posts"
   }, {
     name: "Friends",
-    urlname: "friends/current"
+    urlname: "friends/added"
   }, {
     name: "Notifications",
     urlname: "notifications"
   }]
+  const handleClick = (val: string) => {
+    setSelectedPage(val)
+    setTabName(val)
+  }
   const [selectedPage, setSelectedPage] = useState<string>(() => {
     const curr_path: string = window.location.pathname
     for (let i = 0; i < pages.length; i++) {
@@ -38,7 +45,7 @@ export const PageController = () => {
           <PageControllerButton 
           key={index}
           isSelected={val.name == selectedPage}
-          setSelectedPage={setSelectedPage}
+          setSelectedPage={handleClick}
           pageInfo={val}></PageControllerButton>)}
         <PageControllerExit></PageControllerExit>
       </div>

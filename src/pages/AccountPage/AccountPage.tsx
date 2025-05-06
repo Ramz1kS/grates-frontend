@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { motion } from 'motion/react'
+import React, { useState } from 'react'
 import classes from './AccountPage.module.css'
 import { AccountAvatar } from '../../components/AccountAvatar/AccountAvatar'
 import BackgroundTest from '../../assets/test/account_page_background_test.png'
-import { AccountSectionSwitcher } from '../../components/AccountSectionSwitcher/AccountSectionSwitcher'
+import { SectionSwitcher } from '../../components/SectionSwitcher/SectionSwitcher'
 import { AccountBasicInfo } from '../../components/AccountBasicInfo/AccountBasicInfo'
 import { PostsList } from '../../components/PostsList/PostsList'
 import { PhotosList } from '../../components/PhotosList/PhotosList'
 import { FriendsList } from '../../components/FriendsList/FriendsList'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { FriendButtonType } from '../../types'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 export const AccountPage = () => {
   const pages = [{
     name: "Posts",
-    urlname: "posts",
+    urlname: "account/posts",
     count: 42
   }, {
     name: "Friends",
-    urlname: "friends",
+    urlname: "account/friends",
     count: 12
   }, {
     name: "Photos",
-    urlname: "photos",
+    urlname: "account/photos",
     count: 4
   }]
   const [currSection, setCurrSection] = useState<string>(() => {
@@ -44,11 +44,12 @@ export const AccountPage = () => {
             details={"Ain't got no problem with bougie, but I can't cuff her, that hoe is too choosy, nah-nah"}></AccountBasicInfo>
           </section>
         </section>
-        <AccountSectionSwitcher currPage={currSection} pages={pages} setCurrPage={setCurrSection}></AccountSectionSwitcher>
+        <SectionSwitcher currPage={currSection} pages={pages} setCurrPage={setCurrSection}></SectionSwitcher>
         <Routes>
           <Route path='posts' element={<PostsList nickname={'idspikes1'}></PostsList>}></Route>
           <Route path='photos' element={<PhotosList></PhotosList>}></Route>
-          <Route path='friends' element={<FriendsList></FriendsList>}></Route>
+          <Route path='friends' element={<FriendsList type={FriendButtonType.display}></FriendsList>}></Route>
+          <Route path='*' element={<Navigate to="/notfound"></Navigate>}></Route>
         </Routes>
       </div>
     </div>

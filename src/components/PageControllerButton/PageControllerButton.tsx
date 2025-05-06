@@ -7,7 +7,7 @@ import { PageControllerButtonInfo } from '../../types'
 interface PageControllerButtonProps {
   pageInfo: PageControllerButtonInfo,
   isSelected: boolean,
-  setSelectedPage: (val: string | ((prevVal: string) => string)) => void
+  setSelectedPage: (val: string) => void
 }
 
 export const PageControllerButton: FC<PageControllerButtonProps> = ({pageInfo, isSelected, setSelectedPage}) => {
